@@ -135,6 +135,7 @@ void CueioDriveAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
+    // Limpar os canais de saída que não estão sendo usados
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
@@ -148,24 +149,49 @@ void CueioDriveAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
     float blend = blendParam->load();
     float volume = volumeParam->load();
 
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
+    // Se o número de canais de entrada for mono (1 canal) e o de saída for estéreo (2 canais)
+    if (totalNumInputChannels == 1 && totalNumOutputChannels == 2)
     {
-        auto* channelData = buffer.getWritePointer (channel);
-
+        auto* monoData = buffer.getWritePointer(0);
         for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
         {
-            float cleanSig = channelData[sample];
+            float cleanSig = monoData[sample];
             float driveSig = std::tanh(drive * cleanSig);
-            
+
             driveSig *= range;
             driveSig = std::tanh(driveSig / 1000) * 1000;
             driveSig /= range;
 
             float outSig = (1 - blend) * cleanSig + blend * driveSig;
-            channelData[sample] = outSig * volume;
+            monoData[sample] = outSig * volume;
+        }
+
+        // Copiar os dados do canal esquerdo (0) para o canal direito (1)
+        buffer.copyFrom(1, 0, buffer, 0, 0, buffer.getNumSamples());
+    }
+    else
+    {
+        // Se for estéreo, processar ambos os canais
+        for (int channel = 0; channel < totalNumInputChannels; ++channel)
+        {
+            auto* channelData = buffer.getWritePointer(channel);
+
+            for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
+            {
+                float cleanSig = channelData[sample];
+                float driveSig = std::tanh(drive * cleanSig);
+
+                driveSig *= range;
+                driveSig = std::tanh(driveSig / 1000) * 1000;
+                driveSig /= range;
+
+                float outSig = (1 - blend) * cleanSig + blend * driveSig;
+                channelData[sample] = outSig * volume;
+            }
         }
     }
 }
+
 
 //==============================================================================
 bool CueioDriveAudioProcessor::hasEditor() const

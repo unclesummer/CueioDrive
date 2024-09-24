@@ -6,9 +6,20 @@ CueioDriveAudioProcessorEditor::CueioDriveAudioProcessorEditor (CueioDriveAudioP
 {
     setSize (400, 300);
 
+    // Carregar a imagem de fundo (assumindo que background.png foi adicionada)
+    backgroundImage = juce::ImageFileFormat::loadFrom(BinaryData::background_png, BinaryData::background_pngSize);
+    
     // Carregar a fonte personalizada (assumindo que MyFont.ttf foi adicionada)
-
     customFont = juce::Font(juce::Typeface::createSystemTypefaceFor(BinaryData::ABoxFor_ttf, BinaryData::ABoxFor_ttfSize));
+
+    // Criar uma instância do look and feel personalizado
+    customLookAndFeel = std::make_unique<CustomLookAndFeel>();
+
+    // Aplicar o LookAndFeel aos sliders
+    driveKnob.setLookAndFeel(customLookAndFeel.get());
+    rangeKnob.setLookAndFeel(customLookAndFeel.get());
+    blendKnob.setLookAndFeel(customLookAndFeel.get());
+    volumeKnob.setLookAndFeel(customLookAndFeel.get());
 
     auto setupSlider = [this](juce::Slider& slider, juce::Label& label, const juce::String& paramID, const juce::String& labelText)
     {
@@ -20,6 +31,9 @@ CueioDriveAudioProcessorEditor::CueioDriveAudioProcessorEditor (CueioDriveAudioP
         addAndMakeVisible(label);
         label.setText(labelText, juce::dontSendNotification);
         label.attachToComponent(&slider, false);
+
+        // Definir a cor do texto da label como preto
+        label.setColour(juce::Label::textColourId, juce::Colours::black);
         
         // Aplicar a fonte personalizada
         label.setFont(customFont.withHeight(29.0f)); // Ajuste a altura conforme necessário
@@ -30,26 +44,45 @@ CueioDriveAudioProcessorEditor::CueioDriveAudioProcessorEditor (CueioDriveAudioP
         blendLabel.setVisible(true);
         volumeLabel.setVisible(true);
 
-        return std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(
-            audioProcessor.parameters, paramID, slider);
+        return std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.parameters, paramID, slider);
     };
 
     driveAttachment = setupSlider(driveKnob, driveLabel, "drive", "Drive");
     rangeAttachment = setupSlider(rangeKnob, rangeLabel, "range", "Range");
     blendAttachment = setupSlider(blendKnob, blendLabel, "blend", "Blend");
     volumeAttachment = setupSlider(volumeKnob, volumeLabel, "volume", "Volume");
-
-
 }
 
 CueioDriveAudioProcessorEditor::~CueioDriveAudioProcessorEditor()
 {
+    // Limpar LookAndFeel quando o editor for destruído
+    driveKnob.setLookAndFeel(nullptr);
+    rangeKnob.setLookAndFeel(nullptr);
+    blendKnob.setLookAndFeel(nullptr);
+    volumeKnob.setLookAndFeel(nullptr);
 }
 
 void CueioDriveAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
+    // Primeiro, preencha o background com a cor branca
+    g.fillAll(juce::Colours::white); 
+
+    // Depois, desenhe a imagem de fundo
+    if (!backgroundImage.isNull())
+    {
+        // Definir o tamanho desejado para a imagem
+        int imageWidth = 80;  // Ajuste conforme necessário
+        int imageHeight = 55; // Ajuste conforme necessário
+
+        // Calcular a posição para colocar a imagem no canto inferior direito
+        int startX = getWidth() - imageWidth;  // Alinhar à direita
+        int startY = getHeight() - imageHeight; // Alinhar à parte inferior
+
+        // Desenhar a imagem redimensionada no centro
+        g.drawImage(backgroundImage, startX, startY, imageWidth, imageHeight, 0, 0, backgroundImage.getWidth(), backgroundImage.getHeight());
+    }
 }
+
 
 void CueioDriveAudioProcessorEditor::resized()
 {

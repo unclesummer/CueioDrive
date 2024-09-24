@@ -8,6 +8,12 @@
 
 namespace BinaryData
 {
+    extern const char*   knob_png;
+    const int            knob_pngSize = 196036;
+
+    extern const char*   background_png;
+    const int            background_pngSize = 103343;
+
     extern const char*   ABoxFor2_ttf;
     const int            ABoxFor2_ttfSize = 94036;
 
@@ -18,7 +24,7 @@ namespace BinaryData
     const int            ABoxFor_ttfSize = 94164;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 3;
+    const int namedResourceListSize = 5;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

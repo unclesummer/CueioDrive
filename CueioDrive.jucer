@@ -3,6 +3,12 @@
 <JUCERPROJECT id="Gluyfe" name="CueioDrive" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="WnPRRC" name="CueioDrive">
+    <GROUP id="{3D10BAB9-7FB7-38A4-C7C6-8AE7AA3A7EDF}" name="sliders">
+      <FILE id="kUxxRD" name="knob.png" compile="0" resource="1" file="knob.png"/>
+    </GROUP>
+    <GROUP id="{C95BAA74-B3DE-2D88-7A1F-D7F2FE1F0342}" name="bg">
+      <FILE id="pFI7HS" name="background.png" compile="0" resource="1" file="background.png"/>
+    </GROUP>
     <GROUP id="{5C79E561-EAFD-6C63-FD9A-B81AB7F488AC}" name="fonts">
       <FILE id="nwVKeQ" name="ABoxFor2.ttf" compile="0" resource="1" file="ABoxFor2.ttf"/>
       <FILE id="SKFiW3" name="ABoxFor3.ttf" compile="0" resource="1" file="ABoxFor3.ttf"/>
