@@ -3,6 +3,29 @@
 <JUCERPROJECT id="Gluyfe" name="CueioDrive" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="WnPRRC" name="CueioDrive">
+    <GROUP id="{CE00F4BA-692B-A775-D178-96CBF7D332F1}" name="guitar-pedal-app">
+      <GROUP id="{C931E44E-AB09-DC01-4621-93935B885FAC}" name="src">
+        <FILE id="nkmGPj" name="App.css" compile="0" resource="1" file="guitar-pedal-app/src/App.css"/>
+        <FILE id="oOLY0x" name="App.js" compile="0" resource="1" file="guitar-pedal-app/src/App.js"/>
+        <FILE id="Kvkv3v" name="App.test.js" compile="0" resource="1" file="guitar-pedal-app/src/App.test.js"/>
+        <FILE id="RtVXht" name="background.png" compile="0" resource="1" file="guitar-pedal-app/src/background.png"/>
+        <FILE id="zjDh77" name="GuitarPedal.js" compile="0" resource="1" file="guitar-pedal-app/src/GuitarPedal.js"/>
+        <FILE id="lQ4Kft" name="index.css" compile="0" resource="1" file="guitar-pedal-app/src/index.css"/>
+        <FILE id="wPrzGz" name="index.js" compile="0" resource="1" file="guitar-pedal-app/src/index.js"/>
+        <FILE id="WjVYBo" name="logo.svg" compile="0" resource="1" file="guitar-pedal-app/src/logo.svg"/>
+        <FILE id="WrYkdd" name="reportWebVitals.js" compile="0" resource="1"
+              file="guitar-pedal-app/src/reportWebVitals.js"/>
+        <FILE id="URRpD2" name="setupTests.js" compile="0" resource="1" file="guitar-pedal-app/src/setupTests.js"/>
+      </GROUP>
+      <FILE id="lM4tGJ" name="package-lock.json" compile="0" resource="1"
+            file="guitar-pedal-app/package-lock.json"/>
+      <FILE id="XDik3z" name="package.json" compile="0" resource="1" file="guitar-pedal-app/package.json"/>
+      <FILE id="dkV6pi" name="postcss.config.js" compile="0" resource="1"
+            file="guitar-pedal-app/postcss.config.js"/>
+      <FILE id="U5iIak" name="README.md" compile="0" resource="1" file="guitar-pedal-app/README.md"/>
+      <FILE id="BLSlrc" name="tailwind.config.js" compile="0" resource="1"
+            file="guitar-pedal-app/tailwind.config.js"/>
+    </GROUP>
     <GROUP id="{3D10BAB9-7FB7-38A4-C7C6-8AE7AA3A7EDF}" name="sliders">
       <FILE id="kUxxRD" name="knob.png" compile="0" resource="1" file="knob.png"/>
     </GROUP>
@@ -25,6 +48,7 @@
     </GROUP>
   </MAINGROUP>
   <MODULES>
+    <MODULE id="foleys_gui_magic" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
@@ -33,13 +57,16 @@
     <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
   </MODULES>
-  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"
+               FOLEYS_ENABLE_BINARY_DATA="0"/>
   <EXPORTFORMATS>
     <VS2022 targetFolder="Builds/VisualStudio2022">
       <CONFIGURATIONS>
@@ -59,6 +86,9 @@
         <MODULEPATH id="juce_graphics" path="../../../../../JUCE/modules"/>
         <MODULEPATH id="juce_gui_basics" path="../../../../../JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../../../../JUCE/modules"/>
+        <MODULEPATH id="foleys_gui_magic" path="Modules/foleys_gui_magic/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../../../JUCE/modules"/>
       </MODULEPATHS>
     </VS2022>
   </EXPORTFORMATS>

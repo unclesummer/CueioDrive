@@ -6,7 +6,8 @@
                 "${default}",
                 "${workspaceFolder}/JuceLibraryCode",
                 "C:/JUCE/**",
-                "C:/Users/Geral/Documents/JUCE tests/CueioDrive/JuceLibraryCode"
+                "C:/Users/Geral/Documents/JUCE tests/CueioDrive/JuceLibraryCode",
+                "${workspaceFolder}/Modules/foleys_gui_magic/modules"
             ],
             "defines": [
                 "_DEBUG",
