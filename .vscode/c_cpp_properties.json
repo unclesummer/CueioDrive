@@ -6,8 +6,12 @@
                 "${default}",
                 "${workspaceFolder}/JuceLibraryCode",
                 "C:/JUCE/**",
-                "C:/Users/Geral/Documents/JUCE tests/CueioDrive/JuceLibraryCode",
-                "${workspaceFolder}/Modules/foleys_gui_magic/modules"
+                "C:/Users/Geral/Documents/JUCE_tests/CueioDrive/JuceLibraryCode",
+                "${workspaceFolder}/Modules/foleys_gui_magic/modules",
+                "${workspaceFolder}/guitar-pedal-app/react-juce",
+                "${workspaceFolder}/guitar-pedal-app/react-juce/react_juce",
+                "${workspaceFolder}/react-juce/react_juce/duktape/src",
+                "${workspaceFolder}"
             ],
             "defines": [
                 "_DEBUG",
@@ -18,6 +22,21 @@
             "cppStandard": "c++17",
             "intelliSenseMode": "${default}",
             "compilerPath": "C:/MinGW/bin/gcc.exe"
+        },
+        {
+            "name": "Win64",
+            "includePath": [
+                "${default}"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22621.0",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
         }
     ],
     "version": 4

@@ -4,6 +4,48 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="WnPRRC" name="CueioDrive">
     <GROUP id="{CE00F4BA-692B-A775-D178-96CBF7D332F1}" name="guitar-pedal-app">
+      <GROUP id="{D391B353-1A8E-A29E-AB18-9FA7A1AE7D30}" name="build">
+        <GROUP id="{9166F3CA-9843-D326-39BA-0755A13212CA}" name="static">
+          <GROUP id="{CAE659E7-67A7-59AF-ADFE-0B30AEF983DC}" name="css">
+            <FILE id="YoFzdV" name="main.f95af1c9.css" compile="0" resource="1"
+                  file="guitar-pedal-app/build/static/css/main.f95af1c9.css"/>
+            <FILE id="ULIbfL" name="main.f95af1c9.css.map" compile="0" resource="1"
+                  file="guitar-pedal-app/build/static/css/main.f95af1c9.css.map"/>
+          </GROUP>
+          <GROUP id="{3877A78B-6B6C-8288-A425-FF1AFBD45209}" name="js">
+            <FILE id="hIlJ32" name="453.74d7ea5f.chunk.js" compile="0" resource="1"
+                  file="guitar-pedal-app/build/static/js/453.74d7ea5f.chunk.js"/>
+            <FILE id="z7zBua" name="453.74d7ea5f.chunk.js.map" compile="0" resource="1"
+                  file="guitar-pedal-app/build/static/js/453.74d7ea5f.chunk.js.map"/>
+            <FILE id="Lgp5Kw" name="main.44d1df11.js" compile="0" resource="0"
+                  file="guitar-pedal-app/build/static/js/main.44d1df11.js"/>
+            <FILE id="k6ZoMS" name="main.44d1df11.js.LICENSE.txt" compile="0" resource="0"
+                  file="guitar-pedal-app/build/static/js/main.44d1df11.js.LICENSE.txt"/>
+            <FILE id="CqhaGC" name="main.44d1df11.js.map" compile="0" resource="0"
+                  file="guitar-pedal-app/build/static/js/main.44d1df11.js.map"/>
+          </GROUP>
+          <GROUP id="{D9DDE2BF-7543-16BB-8140-901D62A2551B}" name="media">
+            <FILE id="sWmIwu" name="background.4ab7b58a410092b15c24.png" compile="0"
+                  resource="1" file="guitar-pedal-app/build/static/media/background.4ab7b58a410092b15c24.png"/>
+          </GROUP>
+        </GROUP>
+        <FILE id="SU28bM" name="asset-manifest.json" compile="0" resource="1"
+              file="guitar-pedal-app/build/asset-manifest.json"/>
+        <FILE id="JEIKhg" name="favicon.ico" compile="0" resource="1" file="guitar-pedal-app/build/favicon.ico"/>
+        <FILE id="V8HYeO" name="index.html" compile="0" resource="1" file="guitar-pedal-app/build/index.html"/>
+        <FILE id="Q7x8Ox" name="logo192.png" compile="0" resource="1" file="guitar-pedal-app/build/logo192.png"/>
+        <FILE id="skYGBu" name="logo512.png" compile="0" resource="1" file="guitar-pedal-app/build/logo512.png"/>
+        <FILE id="YkRWtX" name="manifest.json" compile="0" resource="1" file="guitar-pedal-app/build/manifest.json"/>
+        <FILE id="Z5cM2B" name="robots.txt" compile="0" resource="1" file="guitar-pedal-app/build/robots.txt"/>
+      </GROUP>
+      <GROUP id="{EA13FD16-0566-8498-0691-2EB1034B1445}" name="public">
+        <FILE id="TYmXSn" name="favicon.ico" compile="0" resource="1" file="guitar-pedal-app/public/favicon.ico"/>
+        <FILE id="Mt36XM" name="index.html" compile="0" resource="1" file="guitar-pedal-app/public/index.html"/>
+        <FILE id="uFfSzC" name="logo192.png" compile="0" resource="1" file="guitar-pedal-app/public/logo192.png"/>
+        <FILE id="RCXuXi" name="logo512.png" compile="0" resource="1" file="guitar-pedal-app/public/logo512.png"/>
+        <FILE id="jkgxLT" name="manifest.json" compile="0" resource="1" file="guitar-pedal-app/public/manifest.json"/>
+        <FILE id="JUqrSN" name="robots.txt" compile="0" resource="1" file="guitar-pedal-app/public/robots.txt"/>
+      </GROUP>
       <GROUP id="{C931E44E-AB09-DC01-4621-93935B885FAC}" name="src">
         <FILE id="nkmGPj" name="App.css" compile="0" resource="1" file="guitar-pedal-app/src/App.css"/>
         <FILE id="oOLY0x" name="App.js" compile="0" resource="1" file="guitar-pedal-app/src/App.js"/>
@@ -48,7 +90,6 @@
     </GROUP>
   </MAINGROUP>
   <MODULES>
-    <MODULE id="foleys_gui_magic" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
@@ -60,17 +101,17 @@
     <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
   </MODULES>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"
-               FOLEYS_ENABLE_BINARY_DATA="0"/>
+               FOLEYS_ENABLE_BINARY_DATA="0" JUCE_USE_WIN_WEBVIEW2_WITH_STATIC_LINKING="1"/>
   <EXPORTFORMATS>
     <VS2022 targetFolder="Builds/VisualStudio2022">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="CueioDrive"/>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="CueioDrive" postbuildCommand="xcopy /S /Y &quot;$(SolutionDir)$(ConfigurationName)\*&quot; &quot;$(TargetDir)build\&quot;&#10;"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="CueioDrive"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
@@ -86,7 +127,6 @@
         <MODULEPATH id="juce_graphics" path="../../../../../JUCE/modules"/>
         <MODULEPATH id="juce_gui_basics" path="../../../../../JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../../../../JUCE/modules"/>
-        <MODULEPATH id="foleys_gui_magic" path="Modules/foleys_gui_magic/modules"/>
         <MODULEPATH id="juce_dsp" path="../../../../../JUCE/modules"/>
         <MODULEPATH id="juce_cryptography" path="../../../../../JUCE/modules"/>
       </MODULEPATHS>

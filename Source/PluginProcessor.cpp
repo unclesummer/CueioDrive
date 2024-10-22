@@ -139,17 +139,18 @@ void CueioDriveAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
+    // Pegando os valores atualizados do frontend
     auto* driveParam = parameters.getRawParameterValue("drive");
     auto* rangeParam = parameters.getRawParameterValue("range");
     auto* blendParam = parameters.getRawParameterValue("blend");
     auto* volumeParam = parameters.getRawParameterValue("volume");
 
-    float drive = driveParam->load();
-    float range = rangeParam->load();
-    float blend = blendParam->load();
-    float volume = volumeParam->load();
+    float drive = driveParam->load();    // Valor atualizado do frontend
+    float range = rangeParam->load();    // Valor atualizado do frontend
+    float blend = blendParam->load();    // Valor atualizado do frontend
+    float volume = volumeParam->load();  // Valor atualizado do frontend
 
-    // Se o número de canais de entrada for mono (1 canal) e o de saída for estéreo (2 canais)
+    // Processamento dos sinais, como antes
     if (totalNumInputChannels == 1 && totalNumOutputChannels == 2)
     {
         auto* monoData = buffer.getWritePointer(0);
@@ -171,7 +172,6 @@ void CueioDriveAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
     }
     else
     {
-        // Se for estéreo, processar ambos os canais
         for (int channel = 0; channel < totalNumInputChannels; ++channel)
         {
             auto* channelData = buffer.getWritePointer(channel);
@@ -191,6 +191,7 @@ void CueioDriveAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
         }
     }
 }
+
 
 
 //==============================================================================

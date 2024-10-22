@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import headerImage from 'C:/Users/Geral/Documents/JUCE tests/CueioDrive/guitar-pedal-app/src/background.png'; // Importe sua imagem do topo aqui
+import headerImage from 'C:/Users/Geral/Documents/JUCE_tests/CueioDrive/guitar-pedal-app/src/background.png'; // Importe sua imagem do topo aqui
 
 const GuitarPedal = () => {
   const [volume, setVolume] = useState(50);
